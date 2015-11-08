@@ -1,0 +1,34 @@
+<md-whiteframe class="md-whiteframe-1dp" layout="column" style="margin: 8px">
+  <md-toolbar flex>
+    <h2 class="md-toolbar-tools">
+      Members
+    </h2>
+  </md-toolbar>
+  <h3 style="padding: 8px; margin: 8px">Enter new app that was influenced by chapter</h3>
+  <form layout layout-padding layout-margin layout-wrap>
+    <md-input-container flex="100">
+      <label for="app-name">Application Name</label>
+      <input id="app-name" name="app-name" type="text" ng-model="vm.newApp.name">
+    </md-input-container>
+    <md-input-container flex="100">
+      <label for="app-url">Application Name</label>
+      <input id="app-url" name="app-url" type="text" ng-model="vm.newApp.url">
+    </md-input-container>
+    <md-button type="submit" class="md-accent" ng-click="vm.submitApp()">Submit</md-button>
+  </form>
+  <md-content class="md-padding">
+    <h4>Apps Influenced by chapter</h4>
+    <md-list>
+      <md-list-item ng-repeat="app in vm.apps" class="md-2-line">
+        <img src="app/images/icons/GDG_square_lg.png" class="md-avatar" alt="App Icon" />
+        <div class="md-list-item-text">
+          <h3>{{ app.name }}</h3>
+          <p>{{ app.url }}</p>
+          <md-button class="md-icon-button md-warn md-secondary" ng-click="vm.removeApp(app)" aria-label="Remove">
+            <md-icon>delete</md-icon>
+          </md-button>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-whiteframe>

@@ -12,6 +12,8 @@ angular.module('gdgXBoomerang')
             controller: 'ActivitiesController', controllerAs: 'vm'}).
         when('/organizers', {templateUrl: 'app/organizers/organizers.html',
             controller: 'OrganizersController', controllerAs: 'vm'}).
+        when('/members', {templateUrl: 'app/members/members.html',
+            controller: 'MembersController', controllerAs: 'vm'}).
         otherwise({ redirectTo: '/about' });
 
     $mdThemingProvider.theme('default')

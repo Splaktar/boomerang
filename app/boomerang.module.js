@@ -1,4 +1,4 @@
-angular.module('gdgXBoomerang', ['ngRoute', 'ngSanitize', 'ngAria', 'ngAnimate', 'ngMaterial'])
+angular.module('gdgXBoomerang', ['ngRoute', 'ngSanitize', 'ngAria', 'ngAnimate', 'ngMaterial', 'firebase'])
 .controller('MainController', function ($rootScope, $mdMedia, $mdSidenav, Config, NavService) {
     var mc = this;
     mc.chapterName = Config.name;
