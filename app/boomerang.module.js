@@ -1,4 +1,9 @@
 angular.module('gdgXBoomerang', ['ngRoute', 'ngSanitize', 'ngAria', 'ngAnimate', 'ngMaterial'])
+.run(function ($rootScope, $location) {
+    $rootScope.$on('$routeChangeSuccess', function () {
+        ga('send', 'pageview', {'page': $location.path()});
+    });
+})
 .controller('MainController', function ($rootScope, $mdMedia, $mdSidenav, Config, NavService) {
     var mc = this;
     mc.chapterName = Config.name;
